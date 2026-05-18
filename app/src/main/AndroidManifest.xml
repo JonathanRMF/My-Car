@@ -23,6 +23,7 @@
         <activity android:name=".InfoActivity"
             android:exported="false" />
         <activity android:name=".ListActivity" />
+        <activity android:name=".VehiculosActivity" />
     </application>
 
 </manifest>

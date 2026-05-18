@@ -1,9 +1,11 @@
 package com.example.mycar;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +47,14 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
         Categoria categoria = listaCategorias.get(position);
 
         holder.txtCategoria.setText(categoria.getNombre());
+
+        holder.txtCategoria.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), VehiculosActivity.class);
+
+            intent.putExtra("categoria", categoria.getNombre());
+
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
