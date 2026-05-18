@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,6 +52,15 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
         holder.txtPrecioVehiculo.setText(
                 "$" + vehiculo.getPrecio()
         );
+
+        holder.txtNombreVehiculo.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), DetalleVehiculoActivity.class);
+
+            intent.putExtra("nombre", vehiculo.getNombre());
+            intent.putExtra("precio", vehiculo.getPrecio());
+
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
