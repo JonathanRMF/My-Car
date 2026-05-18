@@ -40,5 +40,6 @@ public class VehiculosActivity extends Activity {
 
         recyclerVehiculos.setLayoutManager(new LinearLayoutManager(this));
 
+
     }
 }
