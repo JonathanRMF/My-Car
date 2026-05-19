@@ -11,28 +11,50 @@
         android:id="@+id/txtVehiculoFormulario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="28sp"/>
+        android:textSize="28sp"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/edtApellido"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginTop="10dp"
+        android:hint="Apellido del cliente"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/edtNombre"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre cliente"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="67dp"
+        android:layout_marginTop="10dp"
+        android:hint="Nombre del cliente"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/edtDias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="71dp"
+        android:layout_marginTop="10dp"
         android:hint="Cantidad de días"
-        android:inputType="number"
+        android:inputType="number" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forma de pago"
         android:layout_marginTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginTop="5dp" />
 
     <Button
         android:id="@+id/btnConfirmar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmar alquiler"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:text="Confirmar alquiler" />
 
 </LinearLayout>
