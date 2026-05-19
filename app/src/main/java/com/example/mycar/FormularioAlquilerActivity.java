@@ -48,6 +48,8 @@ public class FormularioAlquilerActivity extends AppCompatActivity {
         precioDia  = getIntent().getDoubleExtra("precio_dia", 0.0);
         String nombreVehiculo = getIntent().getStringExtra("nombre");
         txtVehiculoFormulario.setText(nombreVehiculo);
+        TextView txtPrecioDia = findViewById(R.id.txtPrecioDiaFormulario);
+        txtPrecioDia.setText("Precio por día: $" + precioDia);
 
         // Botón confirmar
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
