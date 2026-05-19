@@ -18,11 +18,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/listado_autos"
+        android:id="@+id/listado_vehiculos"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:text="Autos"
+        android:text="@string/listado_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
@@ -32,17 +32,17 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:text="Alquiler"
+        android:text="@string/alquiler_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listado_autos" />
+        app:layout_constraintTop_toBottomOf="@+id/listado_vehiculos" />
 
     <Button
         android:id="@+id/informacion_app"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:text="Informacion"
+        android:text="@string/info_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/alquileres_registrados" />

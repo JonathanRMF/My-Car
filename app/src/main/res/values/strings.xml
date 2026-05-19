@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MyCar</string>
+    <string name="app_info">MyCar</string>
+    <string name="volver_info">Volver</string>
+    <string name="listado_info">Vehículos</string>
+    <string name="alquiler_info">Alquiler</string>
+    <string name="info_info">Informacion</string>
+    <string name="camionetas_info">Camionetas</string>
+    <string name="autos_info">Autos</string>
+    <string name="util_info">Utilitarios</string>
+    <string name="deptor_info">Deportivos</string>
 </resources>

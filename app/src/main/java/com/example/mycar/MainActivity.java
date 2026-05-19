@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Referencia a los elementos de las interfaces
         btnInfo = (Button) findViewById(R.id.informacion_app);
-        btnAutos = (Button) findViewById(R.id.listado_autos);
+        btnAutos = (Button) findViewById(R.id.listado_vehiculos);
         btnAlquiler = (Button) findViewById(R.id.alquileres_registrados);
 
         //Evento onCLick Listado de Autos
