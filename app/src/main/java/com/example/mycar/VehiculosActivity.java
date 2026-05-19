@@ -22,6 +22,7 @@ public class VehiculosActivity extends Activity {
         setContentView(R.layout.activity_vehiculos);
 
         txtCategoria = findViewById(R.id.txtCategoriaSeleccionada);
+        recyclerVehiculos = findViewById(R.id.recyclerVehiculos);
 
         String categoria = getIntent().getStringExtra("categoria");
 
