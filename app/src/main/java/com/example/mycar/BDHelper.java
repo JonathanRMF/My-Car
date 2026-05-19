@@ -62,10 +62,10 @@ public class BDHelper extends SQLiteOpenHelper {
         insertarVehiculo(db, "Auto", "Renault", "Logan", 2021, 5, "1.6L", 22000, 38.0, "Económico y espacioso", "auto_logan");
         insertarVehiculo(db, "Auto", "Ford", "Focus", 2022, 5, "2.0L", 18000, 48.0, "Dinámico y versátil", "auto_focus");
         // SUV
-        insertarVehiculo(db, "SUV", "Toyota", "RAV4", 2023, 5, "2.5L Hybrid", 5000, 85.0, "SUV híbrida con tecnología avanzada", "suv_rav4");
-        insertarVehiculo(db, "SUV", "Ford", "Territory", 2022, 5, "1.5L Turbo", 12000, 75.0, "SUV urbana y cómoda", "suv_territory");
-        insertarVehiculo(db, "SUV", "Jeep", "Compass", 2023, 5, "2.4L", 9000, 90.0, "Aventura y confort combinados", "suv_compass");
-        insertarVehiculo(db, "SUV", "Chevrolet", "Tracker", 2022, 5, "1.2L Turbo", 14000, 70.0, "Compacta y eficiente", "suv_tracker");
+        insertarVehiculo(db, "Utilitario", "Toyota", "RAV4", 2023, 5, "2.5L Hybrid", 5000, 85.0, "SUV híbrida con tecnología avanzada", "suv_rav4");
+        insertarVehiculo(db, "Utilitario", "Ford", "Territory", 2022, 5, "1.5L Turbo", 12000, 75.0, "SUV urbana y cómoda", "suv_territory");
+        insertarVehiculo(db, "Utilitario", "Jeep", "Compass", 2023, 5, "2.4L", 9000, 90.0, "Aventura y confort combinados", "suv_compass");
+        insertarVehiculo(db, "Utilitario", "Chevrolet", "Tracker", 2022, 5, "1.2L Turbo", 14000, 70.0, "Compacta y eficiente", "suv_tracker");
         // Camionetas
         insertarVehiculo(db, "Camioneta", "Ford", "Ranger", 2022, 5, "3.2L Diesel", 20000, 95.0, "Potente y resistente", "cam_ranger");
         insertarVehiculo(db, "Camioneta", "Toyota", "Hilux", 2023, 5, "2.8L Diesel", 10000, 100.0, "La más vendida del segmento", "cam_hilux");
