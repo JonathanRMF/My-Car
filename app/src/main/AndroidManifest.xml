@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".InfoActivity" android:exported="false" />
         <activity android:name=".ListActivity" android:exported="false"/>
-        <activity android:name=".VehiculosActivity" android:exported="false"/>
+        <activity android:name=".AlquilesActivity" android:exported="false"/>
         <activity android:name=".DetalleVehiculoActivity"/>
         <activity android:name=".FormularioAlquilerActivity"/>
     </application>
