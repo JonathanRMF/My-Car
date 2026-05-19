@@ -42,11 +42,17 @@ public class VehiculosActivity extends Activity {
             int id             = cursor.getInt(0);
             String marca       = cursor.getString(2);
             String modelo      = cursor.getString(3);
+            int anio           = cursor.getInt(4);
+            int plazas         = cursor.getInt(5);
+            String motor       = cursor.getString(6);
+            int kilometraje    = cursor.getInt(7);
             double precio      = cursor.getDouble(8);
             String descripcion = cursor.getString(9);
             String imagen      = cursor.getString(10);
 
-            listaVehiculos.add(new Vehiculo(id, marca + " " + modelo, precio, descripcion, imagen));
+            listaVehiculos.add(new Vehiculo(
+                    id, marca + " " + modelo, precio, descripcion,
+                    imagen, anio, plazas, motor, kilometraje));
         }
         cursor.close();
 

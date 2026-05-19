@@ -23,13 +23,17 @@ public class VehiculoPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        Vehiculo vehiculo = listaVehiculos.get(position);
+        Vehiculo v = listaVehiculos.get(position);
         return DetalleVehiculoFragment.newInstance(
-                vehiculo.getId(),
-                vehiculo.getNombre(),
-                vehiculo.getPrecio(),
-                vehiculo.getDescripcion(),
-                vehiculo.getImagen()
+                v.getId(),
+                v.getNombre(),
+                v.getPrecio(),
+                v.getDescripcion(),
+                v.getImagen(),
+                v.getAnio(),
+                v.getPlazas(),
+                v.getMotor(),
+                v.getKilometraje()
         );
     }
 
