@@ -1,10 +1,11 @@
 package com.example.mycar;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,24 +22,23 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView imgMiniatura;
         TextView txtNombreVehiculo;
         TextView txtPrecioVehiculo;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            txtNombreVehiculo = itemView.findViewById(R.id.txtNombreVehiculo);
-            txtPrecioVehiculo = itemView.findViewById(R.id.txtPrecioVehiculo);
+            imgMiniatura       = itemView.findViewById(R.id.imgMiniatura);
+            txtNombreVehiculo  = itemView.findViewById(R.id.txtNombreVehiculo);
+            txtPrecioVehiculo  = itemView.findViewById(R.id.txtPrecioVehiculo);
         }
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.vehiculo_item, parent, false);
-
         return new ViewHolder(view);
     }
 
@@ -48,19 +48,18 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
         Vehiculo vehiculo = listaVehiculos.get(position);
 
         holder.txtNombreVehiculo.setText(vehiculo.getNombre());
+        holder.txtPrecioVehiculo.setText("$" + vehiculo.getPrecio() + " / día");
 
-        holder.txtPrecioVehiculo.setText(
-                "$" + vehiculo.getPrecio()
-        );
+        // Cargar imagen miniatura
+        int resId = holder.imgMiniatura.getContext().getResources().getIdentifier(
+                vehiculo.getImagen(), "drawable",
+                holder.imgMiniatura.getContext().getPackageName());
+        holder.imgMiniatura.setImageResource(resId);
 
-        holder.txtNombreVehiculo.setOnClickListener(v -> {
+        // Click en cualquier parte del item abre el carrusel
+        holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), CarruselVehiculosActivity.class);
-
-            intent.putExtra("nombre", vehiculo.getNombre());
-            intent.putExtra("precio", vehiculo.getPrecio());
             intent.putExtra("posicion", position);
-            intent.putExtra("descripcion", vehiculo.getDescripcion());
-
             v.getContext().startActivity(intent);
         });
     }
