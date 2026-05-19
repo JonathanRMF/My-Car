@@ -16,6 +16,7 @@ public class VehiculosActivity extends Activity {
     RecyclerView recyclerVehiculos;
     VehiculoAdapter adapter;
     ArrayList<Vehiculo> listaVehiculos;
+    public static ArrayList<Vehiculo> listaVehiculosGlobal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +47,14 @@ public class VehiculosActivity extends Activity {
 
             String descripcion = cursor.getString(9);
 
-            listaVehiculos.add(new Vehiculo(marca + " " + modelo, precio, descripcion));
+            String imagen = cursor.getString(10);
+
+            listaVehiculos.add(new Vehiculo( marca + " " + modelo, precio, descripcion, imagen));
         }
 
         cursor.close();
 
+        listaVehiculosGlobal = listaVehiculos;
         adapter = new VehiculoAdapter(listaVehiculos);
         recyclerVehiculos.setAdapter(adapter);
         recyclerVehiculos.setLayoutManager(new LinearLayoutManager(this));

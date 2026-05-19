@@ -54,10 +54,11 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
         );
 
         holder.txtNombreVehiculo.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), DetalleVehiculoActivity.class);
+            Intent intent = new Intent(v.getContext(), CarruselVehiculosActivity.class);
 
             intent.putExtra("nombre", vehiculo.getNombre());
             intent.putExtra("precio", vehiculo.getPrecio());
+            intent.putExtra("posicion", position);
             intent.putExtra("descripcion", vehiculo.getDescripcion());
 
             v.getContext().startActivity(intent);
