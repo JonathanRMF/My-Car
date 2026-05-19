@@ -1,52 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="20dp">
 
+    <!-- Logo -->
     <TextView
         android:id="@+id/logo"
-        android:layout_width="130dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:text="My Car"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="MyCar"
+        android:background="@color/blue"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/informacion"
-        android:layout_width="300dp"
-        android:layout_height="450dp"
-        android:layout_marginTop="48dp"
-        android:text="@string/app_info"
+    <!-- Card con borde para la información -->
+    <LinearLayout
+        android:id="@+id/cardInfo"
+        android:layout_width="353dp"
+        android:layout_height="333dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/card_border"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/regresar_info"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo">
 
+        <TextView
+            android:id="@+id/informacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="6dp"
+            android:padding="20dp"
+            android:text="@string/app_info"
+            android:textColor="#212121"
+            android:textSize="15sp" />
 
+    </LinearLayout>
+
+    <!-- Botón volver -->
+
+    <!-- Botón listado -->
     <Button
         android:id="@+id/regresar_info"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/volver_info"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/informacion" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/listado_info"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/listado_info"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/listado_info"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toEndOf="@+id/regresar_info"
-        app:layout_constraintTop_toBottomOf="@+id/informacion" />
+        app:layout_constraintStart_toEndOf="@+id/regresar_info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
