@@ -7,13 +7,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 
-public class CarruselVehiculosActivity
-        extends AppCompatActivity {
+public class CarruselVehiculosActivity extends AppCompatActivity {
 
     ViewPager2 viewPager;
-
     VehiculoPagerAdapter adapter;
-
     ArrayList<Vehiculo> listaVehiculos;
 
     @Override
@@ -25,13 +22,9 @@ public class CarruselVehiculosActivity
 
         viewPager = findViewById(R.id.viewPager);
 
-        listaVehiculos =
-                VehiculosActivity.listaVehiculosGlobal;
+        listaVehiculos = VehiculosActivity.listaVehiculosGlobal;
 
-        adapter = new VehiculoPagerAdapter(
-                this,
-                listaVehiculos
-        );
+        adapter = new VehiculoPagerAdapter(this, listaVehiculos);
 
         viewPager.setAdapter(adapter);
 
