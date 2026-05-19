@@ -11,7 +11,7 @@ public class BDHelper extends SQLiteOpenHelper {
 
     //Constructor de la BD
     public BDHelper(Context context) {
-        super(context, "car.db", null, 1);
+        super(context, "car.db", null, 2);
     }
 
     @Override
@@ -48,6 +48,9 @@ public class BDHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS vehiculos");
+        db.execSQL("DROP TABLE IF EXISTS alquileres");
+        onCreate(db);
     }
 
     // ─────────────────────────────────────
@@ -57,25 +60,24 @@ public class BDHelper extends SQLiteOpenHelper {
     // ─────────────────────────────────────
     private void cargarVehiculos(SQLiteDatabase db) {
         // Autos
-        insertarVehiculo(db, "Auto", "Toyota", "Corolla", 2022, 5, "1.8L", 15000, 45.0, "Sedán confortable y económico", "auto_corolla");
-        insertarVehiculo(db, "Auto", "Volkswagen", "Vento", 2023, 5, "1.4L Turbo", 8000, 50.0, "Sedán moderno con gran equipamiento", "auto_vento");
-        insertarVehiculo(db, "Auto", "Renault", "Logan", 2021, 5, "1.6L", 22000, 38.0, "Económico y espacioso", "auto_logan");
-        insertarVehiculo(db, "Auto", "Ford", "Focus", 2022, 5, "2.0L", 18000, 48.0, "Dinámico y versátil", "auto_focus");
-        // SUV
-        insertarVehiculo(db, "Utilitario", "Toyota", "RAV4", 2023, 5, "2.5L Hybrid", 5000, 85.0, "SUV híbrida con tecnología avanzada", "suv_rav4");
-        insertarVehiculo(db, "Utilitario", "Ford", "Territory", 2022, 5, "1.5L Turbo", 12000, 75.0, "SUV urbana y cómoda", "suv_territory");
-        insertarVehiculo(db, "Utilitario", "Jeep", "Compass", 2023, 5, "2.4L", 9000, 90.0, "Aventura y confort combinados", "suv_compass");
-        insertarVehiculo(db, "Utilitario", "Chevrolet", "Tracker", 2022, 5, "1.2L Turbo", 14000, 70.0, "Compacta y eficiente", "suv_tracker");
+        insertarVehiculo(db, "Auto", "Toyota", "Corolla", 2022, 5, "1.8L", 15000, 45.0, "Sedán confortable y económico", "auto_toyota_corolla_2022");
+        insertarVehiculo(db, "Auto", "Volkswagen", "Vento GLI", 2023, 5, "1.4L Turbo", 8000, 50.0, "Sedán moderno con gran equipamiento", "auto_volkswagen_vento_gli");
+        insertarVehiculo(db, "Auto", "Renault", "Logan", 2021, 5, "1.6L", 22000, 38.0, "Económico y espacioso", "auto_renaut_logan");
+        insertarVehiculo(db, "Auto", "Ford", "Focus", 2022, 5, "2.0L", 18000, 48.0, "Dinámico y versátil", "auto_ford_focus");
+        // Utilitarios
+        insertarVehiculo(db, "Utilitario", "Citroën", "Berlingo", 2022, 5, "1.6L HDi", 25000, 60.0, "Versátil y espacioso furgón urbano", "uti_citroen_berlingo");
+        insertarVehiculo(db, "Utilitario", "Mercedes-Benz", "Sprinter", 2023, 9, "2.2L CDi", 18000, 90.0, "Furgón grande ideal para carga y pasajeros", "uti_mercedes_benz_sprinter");
+        insertarVehiculo(db, "Utilitario", "Peugeot", "Partner", 2022, 5, "1.6L HDi", 20000, 55.0, "Compacto y eficiente para trabajo urbano", "uti_peugeot_partner");
+        insertarVehiculo(db, "Utilitario", "Renault", "Kangoo", 2021, 5, "1.6L SCe", 22000, 50.0, "Práctico y económico para el día a día", "uti_renaut_kangoo");
         // Camionetas
-        insertarVehiculo(db, "Camioneta", "Ford", "Ranger", 2022, 5, "3.2L Diesel", 20000, 95.0, "Potente y resistente", "cam_ranger");
-        insertarVehiculo(db, "Camioneta", "Toyota", "Hilux", 2023, 5, "2.8L Diesel", 10000, 100.0, "La más vendida del segmento", "cam_hilux");
-        insertarVehiculo(db, "Camioneta", "Volkswagen", "Amarok", 2022, 5, "3.0L V6", 15000, 110.0, "Potencia y lujo en una pickup", "cam_amarok");
-        insertarVehiculo(db, "Camioneta", "Nissan", "Frontier", 2023, 5, "2.5L Diesel", 8000, 92.0, "Robusta y confiable", "cam_frontier");
+        insertarVehiculo(db, "Camioneta", "Ford", "Ranger", 2022, 5, "3.2L Diesel", 20000, 95.0, "Potente y resistente", "cam_ford_ranger");
+        insertarVehiculo(db, "Camioneta", "Toyota", "Hilux", 2023, 5, "2.8L Diesel", 10000, 100.0, "La más vendida del segmento", "cam_toyota_hilux");
+        insertarVehiculo(db, "Camioneta", "Volkswagen", "Amarok", 2022, 5, "3.0L V6", 15000, 110.0, "Potencia y lujo en una pickup", "cam_volkswagen_amarok_2022");
+        insertarVehiculo(db, "Camioneta", "Nissan", "Frontier", 2023, 5, "2.5L Diesel", 8000, 92.0, "Robusta y confiable", "cam_nissan_frontier_023");
         // Deportivos
-        insertarVehiculo(db, "Deportivo", "Ford", "Mustang", 2023, 4, "5.0L V8", 3000, 150.0, "Ícono americano de alto rendimiento", "dep_mustang");
-        insertarVehiculo(db, "Deportivo", "Chevrolet", "Camaro", 2022, 4, "6.2L V8", 5000, 145.0, "Pura potencia y estilo", "dep_camaro");
-        insertarVehiculo(db, "Deportivo", "BMW", "M3", 2023, 5, "3.0L Turbo", 4000, 200.0, "Deportividad alemana al máximo", "dep_m3");
-        insertarVehiculo(db, "Deportivo", "Audi", "TT", 2022, 4, "2.0L TFSI", 7000, 175.0, "Diseño y performance únicos", "dep_tt");
+        insertarVehiculo(db, "Deportivo", "Chevrolet", "Camaro", 2022, 4, "6.2L V8", 5000, 145.0, "Pura potencia y estilo", "dep_chevrolet_camaro");
+        insertarVehiculo(db, "Deportivo", "BMW", "M3", 2023, 5, "3.0L Turbo", 4000, 200.0, "Deportividad alemana al máximo", "dep_bmw_m3");
+        insertarVehiculo(db, "Deportivo", "Audi", "TT", 2022, 4, "2.0L TFSI", 7000, 175.0, "Diseño y performance únicos", "dep_audi_tt");
     }
 
     private void insertarVehiculo(SQLiteDatabase db, String categoria, String marca,
