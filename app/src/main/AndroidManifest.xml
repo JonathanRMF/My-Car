@@ -24,6 +24,8 @@
             android:exported="false" />
         <activity android:name=".ListActivity" />
         <activity android:name=".VehiculosActivity" />
+        <activity android:name=".DetalleVehiculoActivity"/>
+        <activity android:name=".FormularioAlquilerActivity"/>
     </application>
 
 </manifest>
