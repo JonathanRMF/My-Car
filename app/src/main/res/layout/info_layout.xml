@@ -21,7 +21,7 @@
         android:layout_width="300dp"
         android:layout_height="450dp"
         android:layout_marginTop="48dp"
-        android:text="Aqui va el texto con la informacion de la app que por el moneto no tengo jajaja"
+        android:text="@string/app_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +31,21 @@
         android:id="@+id/regresar_info"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:text="Vorvel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/volver_info"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/informacion" />
+
+    <Button
+        android:id="@+id/listado_info"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/listado_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toEndOf="@+id/regresar_info"
         app:layout_constraintTop_toBottomOf="@+id/informacion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

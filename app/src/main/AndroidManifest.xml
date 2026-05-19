@@ -20,10 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InfoActivity"
-            android:exported="false" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".VehiculosActivity" />
+        <activity android:name=".InfoActivity" android:exported="false" />
+        <activity android:name=".ListActivity" android:exported="false"/>
+        <activity android:name=".VehiculosActivity" android:exported="false"/>
         <activity android:name=".DetalleVehiculoActivity"/>
         <activity android:name=".FormularioAlquilerActivity"/>
     </application>
