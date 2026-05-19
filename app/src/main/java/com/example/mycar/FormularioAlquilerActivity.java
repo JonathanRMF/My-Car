@@ -1,5 +1,6 @@
 package com.example.mycar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -72,25 +73,23 @@ public class FormularioAlquilerActivity extends AppCompatActivity {
                 int dias          = Integer.parseInt(diasTexto);
                 double montoTotal = precioDia * dias;
 
-                // Guardar en la BD
-                BDHelper admin = new BDHelper(FormularioAlquilerActivity.this);
-                boolean ok = admin.registrarAlquiler(
-                        vehiculoId, apellido, nombre, formaPago, dias, precioDia
+                // Mandar todo a ResumenAlquilerActivity SIN guardar en BD
+                Intent intent = new Intent(
+                        FormularioAlquilerActivity.this,
+                        ResumenAlquilerActivity.class
                 );
-
-                if (ok) {
-                    Toast.makeText(FormularioAlquilerActivity.this,
-                            "Alquiler registrado correctamente",
-                            Toast.LENGTH_SHORT).show();
-                    finish(); // cierra y vuelve a la pantalla anterior
-                } else {
-                    Toast.makeText(FormularioAlquilerActivity.this,
-                            "Error al registrar el alquiler",
-                            Toast.LENGTH_SHORT).show();
-                }
+                intent.putExtra("vehiculo_id",  vehiculoId);
+                intent.putExtra("apellido",     apellido);
+                intent.putExtra("nombre",       nombre);
+                intent.putExtra("forma_pago",   formaPago);
+                intent.putExtra("dias",         dias);
+                intent.putExtra("precio_dia",   precioDia);
+                intent.putExtra("monto_total",  montoTotal);
+                intent.putExtra("nombre_vehiculo", txtVehiculoFormulario.getText().toString());
+                startActivity(intent);
             }
-        }); // ← cierra setOnClickListener
+        });
 
     } // ← cierra onCreate
 
-}
+} // ← cierra la clase
