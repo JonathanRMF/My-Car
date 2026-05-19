@@ -12,6 +12,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/volver_info"
+        android:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +23,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:text="@string/camionetas_info"
+        android:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listado_volver" />
 
@@ -31,6 +33,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="48dp"
         android:text="@string/autos_info"
+        android:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/camionetas_list"
         app:layout_constraintTop_toBottomOf="@+id/listado_volver" />
@@ -42,6 +45,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/util_info"
+        android:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/camionetas_list" />
 
@@ -51,6 +55,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/deptor_info"
+        android:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/utl_list"
         app:layout_constraintTop_toBottomOf="@+id/auto_list" />
