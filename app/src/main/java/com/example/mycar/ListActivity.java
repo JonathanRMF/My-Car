@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class ListActivity extends Activity{
 
-    RecyclerView recyclerCategorias;
-    CategoriaAdapter adapter;
-    ArrayList<Categoria> listaCategorias;
-
     private Button btnVolver;
+    Button btnAuto;
+    Button btnCamioneta;
+    Button btnDeportivo;
+    Button btnUtilitario;
 
 
     @Override
@@ -25,6 +25,12 @@ public class ListActivity extends Activity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.listado_layout);
+
+        btnAuto = findViewById(R.id.auto_list);
+        btnCamioneta = findViewById(R.id.camionetas_list);
+        btnUtilitario = findViewById(R.id.utl_list);
+        btnDeportivo = findViewById(R.id.depor_list);
+        btnVolver = findViewById(R.id.listado_volver);
 
         //Localizacion de controles
         btnVolver = (Button) findViewById(R.id.listado_volver);
@@ -42,22 +48,64 @@ public class ListActivity extends Activity{
             }
         });
 
+        btnAuto.setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    ListActivity.this,
+                    VehiculosActivity.class
+            );
 
+            intent.putExtra(
+                    "categoria",
+                    "Auto"
+            );
 
-        /*
-        recyclerCategorias = findViewById(R.id.recyclerCategorias);
+            startActivity(intent);
+        });
 
-        listaCategorias = new ArrayList<>();
+        btnCamioneta.setOnClickListener(v -> {
 
-        listaCategorias.add(new Categoria("Camioneta"));
-        listaCategorias.add(new Categoria("Deportivo"));
-        listaCategorias.add(new Categoria("Utilitario"));
+            Intent intent = new Intent(
+                    ListActivity.this,
+                    VehiculosActivity.class
+            );
 
+            intent.putExtra(
+                    "categoria",
+                    "Camioneta"
+            );
 
-        adapter = new CategoriaAdapter(listaCategorias);
+            startActivity(intent);
+        });
 
-        recyclerCategorias.setAdapter(adapter);
+        btnUtilitario.setOnClickListener(v -> {
 
-        recyclerCategorias.setLayoutManager(new LinearLayoutManager(this));*/
+            Intent intent = new Intent(
+                    ListActivity.this,
+                    VehiculosActivity.class
+            );
+
+            intent.putExtra(
+                    "categoria",
+                    "Utilitario"
+            );
+
+            startActivity(intent);
+        });
+
+        btnDeportivo.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    ListActivity.this,
+                    VehiculosActivity.class
+            );
+
+            intent.putExtra(
+                    "categoria",
+                    "Deportivo"
+            );
+
+            startActivity(intent);
+        });
+
     }
 }

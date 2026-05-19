@@ -106,10 +106,7 @@ public class DetalleVehiculoFragment
 
         btnReservar.setOnClickListener(v -> {
 
-            Intent intent = new Intent(
-                    getContext(),
-                    FormularioAlquilerActivity.class
-            );
+            Intent intent = new Intent(getContext(), FormularioAlquilerActivity.class);
 
             intent.putExtra("nombre", nombre);
 
