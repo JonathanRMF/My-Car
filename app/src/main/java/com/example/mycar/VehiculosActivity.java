@@ -3,11 +3,13 @@ package com.example.mycar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.database.Cursor;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
 
 public class VehiculosActivity extends Activity {
     TextView txtCategoria;
@@ -30,15 +32,27 @@ public class VehiculosActivity extends Activity {
 
         listaVehiculos = new ArrayList<>();
 
-        listaVehiculos.add(new Vehiculo("Toyota Corolla", 25000));
-        listaVehiculos.add(new Vehiculo("Honda Civic", 22000));
-        listaVehiculos.add(new Vehiculo("Ford Focus", 27000));
-        listaVehiculos.add(new Vehiculo("Chevrolet Cruze", 24000));
+        BDHelper helper = new BDHelper(this);
+
+        Cursor cursor = helper.getVehiculosPorCategoria(categoria);
+
+        while(cursor.moveToNext()) {
+
+            String marca = cursor.getString(2);
+
+            String modelo = cursor.getString(3);
+
+            double precio = cursor.getDouble(8);
+
+            String descripcion = cursor.getString(9);
+
+            listaVehiculos.add(new Vehiculo(marca + " " + modelo, precio, descripcion));
+        }
+
+        cursor.close();
 
         adapter = new VehiculoAdapter(listaVehiculos);
-
         recyclerVehiculos.setAdapter(adapter);
-
         recyclerVehiculos.setLayoutManager(new LinearLayoutManager(this));
 
 

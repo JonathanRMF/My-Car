@@ -27,6 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
+
     <Button
         android:id="@+id/regresar_info"
         android:layout_width="150dp"

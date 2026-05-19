@@ -19,7 +19,6 @@ public class AlquilerAdapter extends RecyclerView.Adapter<AlquilerAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         TextView txtCliente;
         TextView txtVehiculo;
         TextView txtDias;

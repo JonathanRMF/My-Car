@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MyCar</string>
-    <string name="app_info">MyCar</string>
+    <string name="app_info">MyCar
+    Autores: Jonatan Moyano, Agostina Collado, Sebastina Salvatierra
+    Aplicacion de Alquiler de Autos</string>
     <string name="volver_info">Volver</string>
     <string name="listado_info">Vehículos</string>
     <string name="alquiler_info">Alquiler</string>

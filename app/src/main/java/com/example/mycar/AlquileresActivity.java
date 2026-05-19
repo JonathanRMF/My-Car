@@ -29,21 +29,30 @@ public class AlquileresActivity extends Activity {
 
         BDHelper helper = new BDHelper(this);
 
-        SQLiteDatabase db = helper.getReadableDatabase();
-
-        Cursor cursor = db.rawQuery("SELECT * FROM alquileres", null);
+        Cursor cursor = helper.getTodosAlquileres();
 
         while(cursor.moveToNext()) {
 
-            String cliente = cursor.getString(1);
+            String apellido = cursor.getString(2);
 
-            String vehiculo = cursor.getString(2);
+            String nombre = cursor.getString(3);
 
-            int dias = cursor.getInt(3);
+            int dias = cursor.getInt(5);
 
-            double total = cursor.getDouble(4);
+            double total = cursor.getDouble(7);
 
-            listaAlquileres.add(new Alquiler(cliente, vehiculo, dias, total));
+            String marca = cursor.getString(9);
+
+            String modelo = cursor.getString(10);
+
+            listaAlquileres.add(
+                    new Alquiler(
+                            apellido + " " + nombre,
+                            marca + " " + modelo,
+                            dias,
+                            total
+                    )
+            );
         }
 
         cursor.close();

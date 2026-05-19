@@ -58,6 +58,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.ViewHo
 
             intent.putExtra("nombre", vehiculo.getNombre());
             intent.putExtra("precio", vehiculo.getPrecio());
+            intent.putExtra("descripcion", vehiculo.getDescripcion());
 
             v.getContext().startActivity(intent);
         });

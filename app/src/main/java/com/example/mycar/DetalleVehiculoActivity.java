@@ -9,6 +9,7 @@ import android.widget.Button;
 public class DetalleVehiculoActivity extends Activity {
     TextView txtNombreDetalle;
     TextView txtPrecioDetalle;
+    TextView txtDescripcionDetalle;
     Button btnAlquilar;
     @Override
     protected  void onCreate(Bundle savedInstanceState) {
@@ -18,13 +19,16 @@ public class DetalleVehiculoActivity extends Activity {
 
         txtNombreDetalle = findViewById(R.id.txtNombreDetalle);
         txtPrecioDetalle = findViewById(R.id.txtPrecioDetalle);
+        txtDescripcionDetalle = findViewById(R.id.txtDescripcionDetalle);
         btnAlquilar = findViewById(R.id.btnAlquilar);
 
         String nombre = getIntent().getStringExtra("nombre");
         double precio = getIntent().getDoubleExtra("precio", 0);
+        String descripcion = getIntent().getStringExtra("descripcion");
 
         txtNombreDetalle.setText(nombre);
         txtPrecioDetalle.setText("Precio por dia: $" + precio);
+        txtDescripcionDetalle.setText(descripcion);
 
         btnAlquilar.setOnClickListener(v -> {
             Intent intent = new Intent(this, FormularioAlquilerActivity.class);

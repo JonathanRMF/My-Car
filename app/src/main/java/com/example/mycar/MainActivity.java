@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, FormularioAlquilerActivity.class);
+                Intent intent = new Intent(MainActivity.this, Alquiler.class);
 
                 startActivity(intent);
             }
