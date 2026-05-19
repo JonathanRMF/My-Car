@@ -108,8 +108,7 @@ public class BDHelper extends SQLiteOpenHelper {
     // Devuelve todos los vehículos de una categoría
     public Cursor getVehiculosPorCategoria(String categoria) {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery(
-                "SELECT * FROM vehiculos WHERE categoria = '" + categoria + "'", null);
+        return db.rawQuery("SELECT * FROM vehiculos WHERE categoria = ?", new String[]{categoria});
     }
 
     // Devuelve un vehículo por su ID
