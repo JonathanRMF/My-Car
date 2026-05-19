@@ -27,6 +27,7 @@
         <activity android:name=".FormularioAlquilerActivity"/>
         <activity android:name=".VehiculosActivity" android:exported="false"/>
         <activity android:name=".CarruselVehiculosActivity" android:exported="false"/>
+        <activity android:name=".ResumenAlquilerActivity" android:exported="false" />
     </application>
 
 </manifest>

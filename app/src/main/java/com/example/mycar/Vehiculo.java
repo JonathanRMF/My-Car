@@ -1,29 +1,28 @@
 package com.example.mycar;
 
 public class Vehiculo {
-
+    int id;
     String nombre;
-
     String descripcion;
-
     double precio;
-
     String imagen;
 
     public Vehiculo(
+            int id,
             String nombre,
             double precio,
             String descripcion,
             String imagen
     ) {
-
+        this.id = id;
         this.nombre = nombre;
-
         this.precio = precio;
-
         this.descripcion = descripcion;
-
         this.imagen = imagen;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNombre() {

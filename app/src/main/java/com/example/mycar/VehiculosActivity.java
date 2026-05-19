@@ -38,18 +38,14 @@ public class VehiculosActivity extends Activity {
         Cursor cursor = helper.getVehiculosPorCategoria(categoria);
 
         while(cursor.moveToNext()) {
-
+            int id = cursor.getInt(0);
             String marca = cursor.getString(2);
-
             String modelo = cursor.getString(3);
-
             double precio = cursor.getDouble(8);
-
             String descripcion = cursor.getString(9);
-
             String imagen = cursor.getString(10);
 
-            listaVehiculos.add(new Vehiculo( marca + " " + modelo, precio, descripcion, imagen));
+            listaVehiculos.add(new Vehiculo(id, marca + " " + modelo, precio, descripcion, imagen));
         }
 
         cursor.close();

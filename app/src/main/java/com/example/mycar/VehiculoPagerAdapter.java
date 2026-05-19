@@ -27,6 +27,7 @@ public class VehiculoPagerAdapter extends FragmentStateAdapter {
         Vehiculo vehiculo = listaVehiculos.get(position);
 
         return DetalleVehiculoFragment.newInstance(
+                vehiculo.getId(),
                 vehiculo.getNombre(),
                 vehiculo.getPrecio(),
                 vehiculo.getDescripcion(),

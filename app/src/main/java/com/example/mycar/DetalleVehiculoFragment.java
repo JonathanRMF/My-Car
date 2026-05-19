@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class DetalleVehiculoFragment
         extends Fragment {
 
+    private static final String ARG_ID = "vehiculo_id";
     private static final String ARG_NOMBRE = "nombre";
     private static final String ARG_PRECIO = "precio";
     private static final String ARG_DESC = "descripcion";
@@ -22,6 +23,7 @@ public class DetalleVehiculoFragment
 
     public static DetalleVehiculoFragment
     newInstance(
+            int id,
             String nombre,
             double precio,
             String descripcion,
@@ -32,6 +34,8 @@ public class DetalleVehiculoFragment
                 new DetalleVehiculoFragment();
 
         Bundle args = new Bundle();
+
+        args.putInt(ARG_ID, id);
 
         args.putString(ARG_NOMBRE, nombre);
 
@@ -74,6 +78,9 @@ public class DetalleVehiculoFragment
         Button btnReservar =
                 view.findViewById(R.id.btnReservar);
 
+        int id =
+                getArguments().getInt(ARG_ID);
+
         String nombre =
                 getArguments().getString(ARG_NOMBRE);
 
@@ -107,6 +114,8 @@ public class DetalleVehiculoFragment
         btnReservar.setOnClickListener(v -> {
 
             Intent intent = new Intent(getContext(), FormularioAlquilerActivity.class);
+
+            intent.putExtra("vehiculo_id", id);
 
             intent.putExtra("nombre", nombre);
 

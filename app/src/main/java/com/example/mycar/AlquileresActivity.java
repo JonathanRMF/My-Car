@@ -43,18 +43,19 @@ public class AlquileresActivity extends AppCompatActivity {
     public void mostrarAlquileres() {
         BDHelper helper = new BDHelper(this);
         Cursor cursor = helper.getTodosAlquileres();
-
+        
         listaAlquileres = new ArrayList<>();
 
-        if (cursor.moveToFirst()) {
-            // hay registros — los recorremos
+        if (cursor != null && cursor.moveToFirst()) {
+            // Hay registros — los recorremos
             do {
-                String apellido = cursor.getString(2);
-                String nombre   = cursor.getString(3);
-                int dias        = cursor.getInt(5);
-                double total    = cursor.getDouble(7);
-                String marca    = cursor.getString(9);
-                String modelo   = cursor.getString(10);
+                // Usamos getColumnIndex por seguridad en lugar de índices fijos
+                String apellido = cursor.getString(cursor.getColumnIndexOrThrow("cliente_apellido"));
+                String nombre   = cursor.getString(cursor.getColumnIndexOrThrow("cliente_nombre"));
+                int dias        = cursor.getInt(cursor.getColumnIndexOrThrow("cantidad_dias"));
+                double total    = cursor.getDouble(cursor.getColumnIndexOrThrow("monto_total"));
+                String marca    = cursor.getString(cursor.getColumnIndexOrThrow("marca"));
+                String modelo   = cursor.getString(cursor.getColumnIndexOrThrow("modelo"));
 
                 listaAlquileres.add(new Alquiler(
                         apellido + " " + nombre,
@@ -63,17 +64,19 @@ public class AlquileresActivity extends AppCompatActivity {
                         total
                 ));
             } while (cursor.moveToNext());
-
             cursor.close();
 
-            // conectar la lista al RecyclerView
+            // Configurar RecyclerView y asegurar visibilidad
             adapter = new AlquilerAdapter(listaAlquileres);
             recyclerAlquileres.setAdapter(adapter);
             recyclerAlquileres.setLayoutManager(new LinearLayoutManager(this));
+            
+            recyclerAlquileres.setVisibility(View.VISIBLE);
+            txtSinAlquileres.setVisibility(View.GONE);
 
         } else {
-            // lista vacía — mostrar mensaje y ocultar el RecyclerView
-            cursor.close();
+            // Lista vacía o error
+            if (cursor != null) cursor.close();
             recyclerAlquileres.setVisibility(View.GONE);
             txtSinAlquileres.setVisibility(View.VISIBLE);
         }
