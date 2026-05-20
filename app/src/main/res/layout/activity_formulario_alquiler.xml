@@ -1,192 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/surface_variant">
+    android:padding="20dp">
 
-    <!-- Header -->
-    <LinearLayout
+    <TextView
+        android:id="@+id/txtVehiculoFormulario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/edtApellido"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginTop="10dp"
+        android:hint="Apellido del cliente"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_marginTop="10dp"
+        android:hint="Nombre del cliente"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtDias"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_marginTop="10dp"
+        android:hint="Cantidad de días"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/txtPrecioDiaFormulario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forma de pago"
+        android:layout_marginTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:id="@+id/btnConfirmar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_header"
-        android:orientation="vertical"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:paddingTop="44dp"
-        android:paddingBottom="24dp">
+        android:layout_marginTop="30dp"
+        android:text="Confirmar alquiler" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MyCar"
-            android:textColor="#99FFFFFF"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nueva reserva"
-            android:textColor="#FFFFFF"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_marginTop="4dp"/>
-
-        <TextView
-            android:id="@+id/txtVehiculoFormulario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#00BCD4"
-            android:textStyle="bold"
-            android:layout_marginTop="6dp"/>
-    </LinearLayout>
-
-    <ScrollView
+    <Button
+        android:id="@+id/btnCancelar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Cancelar alquiler" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <!-- Card formulario -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/card_border"
-                android:padding="20dp"
-                android:elevation="2dp"
-                android:layout_marginBottom="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Datos del cliente"
-                    android:textColor="@color/on_surface"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="16dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Apellido"
-                    android:textColor="@color/on_surface_secondary"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="4dp"/>
-
-                <EditText
-                    android:id="@+id/edtApellido"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:background="@drawable/bg_input"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp"
-                    android:hint="Ej: García"
-                    android:inputType="textPersonName"
-                    android:textSize="15sp"
-                    android:layout_marginBottom="16dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre"
-                    android:textColor="@color/on_surface_secondary"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="4dp"/>
-
-                <EditText
-                    android:id="@+id/edtNombre"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:background="@drawable/bg_input"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp"
-                    android:hint="Ej: Martín"
-                    android:inputType="textPersonName"
-                    android:textSize="15sp"/>
-            </LinearLayout>
-
-            <!-- Card alquiler -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/card_border"
-                android:padding="20dp"
-                android:elevation="2dp"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Detalles del alquiler"
-                    android:textColor="@color/on_surface"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="16dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cantidad de días"
-                    android:textColor="@color/on_surface_secondary"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="4dp"/>
-
-                <EditText
-                    android:id="@+id/edtDias"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:background="@drawable/bg_input"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp"
-                    android:hint="Ej: 3"
-                    android:inputType="number"
-                    android:textSize="15sp"
-                    android:layout_marginBottom="16dp"/>
-
-                <TextView
-                    android:id="@+id/txtPrecioDiaFormulario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    android:layout_marginBottom="16dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Forma de pago"
-                    android:textColor="@color/on_surface_secondary"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="4dp"/>
-
-                <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:background="@drawable/bg_input"
-                    android:paddingStart="10dp"/>
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnConfirmar"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="Confirmar alquiler →"
-                android:backgroundTint="@color/primary"
-                android:textColor="#FFFFFF"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
-
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>

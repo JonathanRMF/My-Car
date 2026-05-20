@@ -1,145 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/surface_variant">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <!-- Imagen grande con overlay -->
-        <FrameLayout
+        <ImageView
+            android:id="@+id/imgVehiculo"
             android:layout_width="match_parent"
-            android:layout_height="260dp">
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"/>
 
-            <ImageView
-                android:id="@+id/imgVehiculo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_image_overlay"/>
-        </FrameLayout>
+        <TextView
+            android:id="@+id/txtDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:paddingTop="8dp"/>
 
-        <!-- Contenido -->
-        <LinearLayout
+        <TextView
+            android:id="@+id/txtFicha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:paddingTop="12dp"
+            android:lineSpacingExtra="4dp"/>
+
+        <TextView
+            android:id="@+id/txtPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnReservar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:background="@color/surface_variant">
+            android:text="Reservar"
+            android:layout_marginTop="24dp"/>
 
-            <!-- Card principal -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/card_border"
-                android:padding="20dp"
-                android:elevation="3dp"
-                android:layout_marginBottom="16dp">
+        <Button
+            android:id="@+id/btnVolverCategorias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver a categorías"
+            android:layout_marginTop="10dp"/>
 
-                <TextView
-                    android:id="@+id/txtNombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="26sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/on_surface"
-                    android:layout_marginBottom="8dp"/>
+        <Button
+            android:id="@+id/btnVolverMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver al inicio"
+            android:layout_marginTop="10dp"/>
 
-                <TextView
-                    android:id="@+id/txtDescripcion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textColor="@color/on_surface_secondary"
-                    android:lineSpacingExtra="2dp"
-                    android:layout_marginBottom="16dp"/>
-
-                <!-- Separador -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/divider"
-                    android:layout_marginBottom="16dp"/>
-
-                <TextView
-                    android:id="@+id/txtFicha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@color/on_surface"
-                    android:lineSpacingExtra="6dp"
-                    android:layout_marginBottom="16dp"/>
-
-                <!-- Precio destacado -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_accent_badge"
-                    android:padding="12dp">
-                    <TextView
-                        android:id="@+id/txtPrecio"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/primary"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Botón Reservar (principal) -->
-            <Button
-                android:id="@+id/btnReservar"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="Reservar este vehículo"
-                android:backgroundTint="@color/primary"
-                android:textColor="#FFFFFF"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginBottom="10dp"/>
-
-            <!-- Botones secundarios -->
-            <Button
-                android:id="@+id/btnVolverLista"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="← Volver a la lista"
-                android:backgroundTint="#C8E6C9"
-                android:textColor="@color/on_surface"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:layout_marginBottom="8dp"/>
-
-            <Button
-                android:id="@+id/btnVolverCategorias"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="← Volver a categorías"
-                android:backgroundTint="#C8E6C9"
-                android:textColor="@color/on_surface"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:layout_marginBottom="8dp"/>
-
-            <Button
-                android:id="@+id/btnVolverMain"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="← Inicio"
-                android:backgroundTint="#C8E6C9"
-                android:textColor="@color/on_surface"
-                android:textAllCaps="false"
-                android:textSize="14sp"/>
-
-        </LinearLayout>
     </LinearLayout>
+
 </ScrollView>

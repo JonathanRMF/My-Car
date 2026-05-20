@@ -1,5 +1,6 @@
 package com.example.mycar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -65,6 +66,8 @@ public class ResumenAlquilerActivity extends AppCompatActivity {
                     Toast.makeText(ResumenAlquilerActivity.this,
                             "¡Alquiler confirmado!",
                             Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ResumenAlquilerActivity.this,MainActivity.class);
+                    startActivity(intent);
                     finish(); // vuelve al detalle del vehículo
                 } else {
                     Toast.makeText(ResumenAlquilerActivity.this,
