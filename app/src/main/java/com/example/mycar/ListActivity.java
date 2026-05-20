@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class ListActivity extends Activity{
 
     private Button btnVolver;
-    Button btnAuto;
-    Button btnCamioneta;
-    Button btnDeportivo;
-    Button btnUtilitario;
+    private Button btnAuto;
+    private Button btnCamioneta;
+    private Button btnDeportivo;
+    private Button btnUtilitario;
 
 
     @Override
