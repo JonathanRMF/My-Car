@@ -55,13 +55,6 @@
             android:layout_marginTop="24dp"/>
 
         <Button
-            android:id="@+id/btnVolverLista"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Volver a lista de vehículos"
-            android:layout_marginTop="10dp"/>
-
-        <Button
             android:id="@+id/btnVolverCategorias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
