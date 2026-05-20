@@ -73,4 +73,5 @@
         android:layout_marginTop="30dp"
         android:text="Cancelar alquiler" />
 
+
 </LinearLayout>
