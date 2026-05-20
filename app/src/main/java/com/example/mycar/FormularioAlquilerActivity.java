@@ -1,5 +1,6 @@
 package com.example.mycar;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,11 +17,12 @@ public class FormularioAlquilerActivity extends AppCompatActivity {
     TextView txtVehiculoFormulario;
     EditText edtApellido, edtNombre, edtDias;
     Spinner spinnerPago;
-    Button btnConfirmar;
+    Button btnConfirmar,btnCancelar;
 
     int vehiculoId;
     double precioDia;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class FormularioAlquilerActivity extends AppCompatActivity {
         edtDias      = findViewById(R.id.edtDias);
         spinnerPago  = findViewById(R.id.spinner);
         btnConfirmar = findViewById(R.id.btnConfirmar);
+        btnCancelar = findViewById(R.id.btnCancelar);
 
         // Cargar opciones del Spinner
         String[] formasDePago = {"Efectivo", "Débito", "Crédito"};
@@ -87,6 +90,15 @@ public class FormularioAlquilerActivity extends AppCompatActivity {
                 intent.putExtra("monto_total",  montoTotal);
                 intent.putExtra("nombre_vehiculo", txtVehiculoFormulario.getText().toString());
                 startActivity(intent);
+            }
+        });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FormularioAlquilerActivity.this, ListActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
